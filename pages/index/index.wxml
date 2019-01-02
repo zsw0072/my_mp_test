@@ -7,8 +7,4 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <navigator url='../hello/hello'>实时天气</navigator>
-    <navigator url='../map/map'>地图</navigator>
-  </view>
 </view>

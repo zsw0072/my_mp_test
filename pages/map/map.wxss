@@ -1,5 +1,6 @@
 /* pages/map/map.wxss */
 .map_container{ 
+    margin-top: 10px;
     height: 300px; 
     width: 100%; 
 } 
@@ -7,4 +8,4 @@
 .map { 
     height: 100%; 
     width: 100%; 
-} 
+}
