@@ -1,8 +1,50 @@
 var bmap = require('../../libs/bmap-wx.js');
+var order = ['green', 'blue', 'green', 'blue']
+
 Page({
-  data: {
-    weatherData: ''
+
+  onShareAppMessage() {
+    return {
+      title: 'scroll-view',
+      path: 'pages/hello/hello/scroll-view'
+    }
   },
+
+  data: {
+    currentWeatherData: '',
+    futureWeatherData: '',
+    toView: 'green'
+  },
+
+  scroll(e) {
+    console.log(e)
+  },
+
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
+  },
+
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1],
+          scrollTop: (i + 1) * 200
+        })
+        break
+      }
+    }
+  },
+
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
+  },
+
+  //获取天气信息
   onLoad: function () {
     var that = this;
     // 新建百度地图对象 
@@ -13,10 +55,12 @@ Page({
       console.log(data)
     };
     var success = function (data) {
-      var weatherData = data.currentWeather[0];
-      weatherData = '城市：' + weatherData.currentCity + '\n' + 'PM2.5：' + weatherData.pm25 + '\n' + '日期：' + weatherData.date + '\n' + '温度：' + weatherData.temperature + '\n' + '天气：' + weatherData.weatherDesc + '\n' + '风力：' + weatherData.wind + '\n';
+      var currentWeatherData = data.currentWeather[0];
+      var futureWeatherData = data.originalData.results[0].weather_data
+      console.log(futureWeatherData);
       that.setData({
-        weatherData: weatherData
+        currentWeatherData: currentWeatherData,
+        futureWeatherData: futureWeatherData
       });
     }
     // 发起weather请求 
