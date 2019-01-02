@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/hello/hello",
+    "pages/weather/weather",
     "pages/map/map"
   ],
   "window": {
@@ -18,7 +18,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/hello/hello",
+        "pagePath": "pages/weather/weather",
         "text": "实时天气"
       },
       {

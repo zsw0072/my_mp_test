@@ -1,6 +1,6 @@
 /* pages/map/map.wxss */
 .map_container{ 
-    margin-top: 10px;
+    margin-top: 0px;
     height: 300px; 
     width: 100%; 
 } 
@@ -8,4 +8,9 @@
 .map { 
     height: 100%; 
     width: 100%; 
+}
+
+.poi{
+  font-size: 35px;
+  font-style: block;
 }

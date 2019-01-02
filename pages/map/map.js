@@ -40,7 +40,7 @@ Page({
         longitude: wxMarkerData[0].longitude
       });
     }
-    console.log(query)
+    //console.log(query)
     // 发起POI检索请求 
     BMap.search({
       "query": query,

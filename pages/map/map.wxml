@@ -1,15 +1,11 @@
 <!--pages/map/map.wxml-->
-
 <view class="map_container"> 
+  <text class="poi">我的附近</text>
   <map class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map> 
-</view> 
-<view class='form-container'>
   <form bindsubmit='formSubmit'>
     <input id='formInput' placeholder='Enter Search query' name="query"></input> 
     <button id='formSubmit' type='primary' form-type='submit'>submit</button>
-  </form>   
-</view>
-<view class="place_info"> 
+  </form> 
   <text>{{placeData.title}}</text> 
   <text>{{placeData.address}}</text> 
   <text>{{placeData.telephone}}</text> 

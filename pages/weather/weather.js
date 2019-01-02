@@ -2,14 +2,7 @@ var bmap = require('../../libs/bmap-wx.js');
 var order = ['green', 'blue', 'green', 'blue']
 
 Page({
-
-  onShareAppMessage() {
-    return {
-      title: 'scroll-view',
-      path: 'pages/hello/hello/scroll-view'
-    }
-  },
-
+  
   data: {
     currentWeatherData: '',
     futureWeatherData: '',
@@ -17,7 +10,6 @@ Page({
   },
 
   scroll(e) {
-    console.log(e)
   },
 
   scrollToTop() {
@@ -57,7 +49,7 @@ Page({
     var success = function (data) {
       var currentWeatherData = data.currentWeather[0];
       var futureWeatherData = data.originalData.results[0].weather_data
-      console.log(futureWeatherData);
+      //console.log(futureWeatherData);
       that.setData({
         currentWeatherData: currentWeatherData,
         futureWeatherData: futureWeatherData
